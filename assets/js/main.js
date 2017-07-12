@@ -1,3 +1,35 @@
+var llamarHabilidades = function(urlHabilidades){
+	$.ajax({
+		url: urlHabilidades,
+		type: 'GET',
+		dataType: 'json',
+		data: {'limit': '2'},
+	})
+	.done(function(respuesta) {
+		console.log(respuesta.abilities);
+		console.log(respuesta.name);
+		console.log(respuesta.weight);
+		var nombreID = respuesta.name;
+
+		respuesta.abilities.forEach(function(el){
+			console.log(el.ability.name);
+			var abilityName = el.ability.name;
+			$("#"+nombreID).append('<p>Poder: '+abilityName+'</p>');
+		})
+	})
+	.done(function(respuesta) {
+		console.log(respuesta.weight);
+		var nombreID = respuesta.name;
+		$("#"+nombreID).append('<p>Peso: '+ respuesta.weight+'</p>');
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete habilidades");
+	});
+}
+
 var llamarAjax = function(){
 	$.ajax({
 		url: 'http://pokeapi.co/api/v2/pokemon',
