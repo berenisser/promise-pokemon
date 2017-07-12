@@ -1,0 +1,14 @@
+*{
+	margin:0;
+	padding: 0;
+}
+
+.cada-poke{
+	background-color: lightgray;
+	border-radius: 5px;
+}
+
+.container-cada-poke{
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
