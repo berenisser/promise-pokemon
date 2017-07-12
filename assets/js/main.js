@@ -6,9 +6,13 @@ var llamarHabilidades = function(urlHabilidades){
 		data: {'limit': '2'},
 	})
 	.done(function(respuesta) {
+		var foto = respuesta.sprites.front_default;
+		var nombreID = respuesta.name;
+		$("#"+nombreID).append('<div class="foto-poke text-center col-lg-12 col-md-12 col-sm-12 col-xs-12"><img src="'+foto+'"></div>');
+		
+	})
+	.done(function(respuesta) {
 		console.log(respuesta.abilities);
-		console.log(respuesta.name);
-		console.log(respuesta.weight);
 		var nombreID = respuesta.name;
 
 		respuesta.abilities.forEach(function(el){
@@ -22,6 +26,7 @@ var llamarHabilidades = function(urlHabilidades){
 		var nombreID = respuesta.name;
 		$("#"+nombreID).append('<p>Peso: '+ respuesta.weight+'</p>');
 	})
+	
 	.fail(function() {
 		console.log("error");
 	})
@@ -44,7 +49,7 @@ var llamarAjax = function(){
 			var nombrePoke = el.name;
 			$(".all-pokemon").append('<div class="container-cada-poke col-lg-3 col-md-3 col-sm-4 col-xs-4">'+
 					'<div class="cada-poke col-lg-12 col-md-12 col-sm-12 col-xs-12" id="'+nombrePoke+'">'+
-						'<h3>'+nombrePoke+'</h3>'+
+						'<h3 class="capitalizar">'+nombrePoke+'</h3>'+
 					'</div>'+
 				'</div>').append(llamarHabilidades(el.url));
 		})
@@ -59,9 +64,9 @@ var llamarAjax = function(){
 }
 
 llamarAjax();
-//Imprimir pokemon + habilidad 10ptos
-//Imprimir pokemon + todas las habilidades 15puntos
+//Imprimir pokemon + habilidad 10ptos X
+//Imprimir pokemon + todas las habilidades 15puntos X
 //Imprimir pokemon habilidades y cualquier otra cosas del pokemon +20ptos
-//No hacerlo con document.write 30pts
-//Hacerlo con jquery 35ptos
+//No hacerlo con document.write 30pts X
+//Hacerlo con jquery 35ptos X
 //Agregar CSS 45ptos

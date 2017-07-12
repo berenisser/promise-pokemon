@@ -12,3 +12,11 @@
 	padding-top: 15px;
 	padding-bottom: 15px;
 }
+
+.foto-poke{
+	background-color: #fff;
+}
+
+.capitalizar{
+	text-transform:capitalize;
+}
