@@ -20,3 +20,8 @@
 .capitalizar{
 	text-transform:capitalize;
 }
+
+.poder{
+	background-color: #fec106;
+	margin-top: 5px;
+}
