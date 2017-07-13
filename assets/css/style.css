@@ -6,6 +6,7 @@
 .cada-poke{
 	background-color: lightgray;
 	border-radius: 5px;
+	border: 1px solid black;
 }
 
 .container-cada-poke{
@@ -24,4 +25,9 @@
 .poder{
 	background-color: #fec106;
 	margin-top: 5px;
+}
+
+center{
+	color: #fff;
+	background-color: gray;
 }
